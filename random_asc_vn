@@ -1,0 +1,202 @@
+.model small
+.stack
+.data
+	Var1 db "You are in a BatStateU to enroll.$"
+	Var2 db "...but you forgot your money...$"
+	Var3 db "...What will you do?$"
+	Var4 db "Game Over$"
+.code
+start:
+	mov ax, @data
+	mov ds,ax
+
+	mov ah, 06
+	mov bh, 30H
+	mov cx, 0
+	mov dx, 184fH
+	int 10h
+ 
+	mov ah, 02
+	mov bh, 0
+	mov dh, 5 ; y position
+	mov dl, 24 ; x position
+	int 10h
+ 	
+	mov ah, 09
+	mov dx, offset Var1
+	int 21h
+
+	mov ah, 01
+	int 21h
+
+	mov ah, 02
+	mov bh, 0
+	mov dh, 6 ; y position
+	mov dl, 24 ; x position
+	int 10h
+
+	mov ah, 09
+	mov dx, offset Var2
+	int 21h
+
+	mov ah, 01
+	int 21h
+
+	mov ah, 02
+	mov bh, 0
+	mov dh, 7 ; y position
+	mov dl, 24 ; x position
+	int 10h
+ 
+	mov ah, 09
+	mov dx, offset Var3
+	int 21h
+ 
+	mov ah, 01
+	int 21h
+ 
+	mov ah, 02
+	mov bh, 0
+	mov dh, 10 ; y position
+	mov dl, 24 ; x position
+	int 10h
+ 
+	mov ah, 09
+	mov dx, offset Var4
+	int 21h
+
+	mov ah, 01
+	int 21h
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		mov ah, 02					; request to set the cursor position
+		mov bh, 0					
+		mov dh, 12 					; y position
+		mov dl, 24 					; x position
+		int 10h
+
+
+		mov ah, 02
+		mov dl, 219
+		int 21h
+
+		mov cx,30
+		mov ah,02
+		mov dl,219
+		lp1:
+		int 21h
+		loop lp1
+
+		mov ah, 02					; request to set the cursor position
+		mov bh, 0					
+		mov dh, 13 					; y position
+		mov dl, 24 					; x position
+		int 10h
+
+
+		mov ah, 02
+		mov dl, 197
+		int 21h
+
+		mov cx,30
+		mov ah,02
+		mov dl,197
+		lp2:
+		int 21h
+		loop lp2
+
+		mov ah, 02					; request to set the cursor position
+		mov bh, 0					
+		mov dh, 14 					; y position
+		mov dl, 24 					; x position
+		int 10h
+
+
+		mov ah, 02
+		mov dl, 197
+		int 21h
+
+		mov cx,5
+		mov ah,02
+		mov dl,197
+		lp3:
+		int 21h
+		loop lp3
+
+		mov ah, 02					; request to set the cursor position
+		mov bh, 0					
+		mov dh, 14 					; y position
+		mov dl, 37 					; x position
+		int 10h
+
+
+		mov ah, 02
+		mov dl, 197
+		int 21h
+
+		mov cx,5
+		mov ah,02
+		mov dl,197
+		lp4:
+		int 21h
+		loop lp4
+
+		mov ah, 02					; request to set the cursor position
+		mov bh, 0					
+		mov dh, 14 					; y position
+		mov dl, 49 					; x position
+		int 10h
+
+
+		mov ah, 02
+		mov dl, 197
+		int 21h
+
+		mov cx,5
+		mov ah,02
+		mov dl,197
+		lp5:
+		int 21h
+		loop lp5
+
+		mov ah, 02					; request to set the cursor position
+		mov bh, 0					
+		mov dh, 15 					; y position
+		mov dl, 24 					; x position
+		int 10h
+
+
+		mov ah, 02
+		mov dl, 197
+		int 21h
+
+		mov cx,30
+		mov ah,02
+		mov dl,197
+		lp6:
+		int 21h
+		loop lp6
+
+		mov ah, 02					; request to set the cursor position
+		mov bh, 0					
+		mov dh, 16 					; y position
+		mov dl, 24 					; x position
+		int 10h
+
+
+		mov ah, 02
+		mov dl, 219
+		int 21h
+
+		mov cx,30
+		mov ah,02
+		mov dl,219
+		lp7:
+		int 21h
+		loop lp7
+
+	mov ah, 4ch
+	int 21h
+
+end start
+
+;created by coolkids

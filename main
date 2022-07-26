@@ -32,7 +32,7 @@
 		mov dx, 184fH		
 		int 10h
 
-		mov ah, 02					; resquest to set the cursor position
+		mov ah, 02					; request to set the cursor position
 		mov bh, 0					
 		mov dh, 12 					; y position
 		mov dl, 30 					; x position

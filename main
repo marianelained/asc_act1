@@ -11,19 +11,19 @@
 		int 10h
 
 		mov ah, 06h
-		mov bh, 0E0h
+		mov bh, 0E0h			;to change screen attributes, 0EH(Yellow) for Background and 0H(Black) for Text 
 		mov cx, 0014h
 		mov dx, 184fH		
 		int 10h
 
 		mov ah, 06h
-		mov bh, 50H
+		mov bh, 50H			;to change screen attributes, 5H(Magenta) for Background and 0H(Black) for Text 
 		mov cx, 0027h
 		mov dx, 184fH		
 		int 10h
 
 		mov ah, 06h
-		mov bh, 30H
+		mov bh, 30H			;to change screen attributes, 3H(Cyan) for Background and 0H(Black) for Text 
 		mov cx, 003cH
 		mov dx, 184fH		
 		int 10h

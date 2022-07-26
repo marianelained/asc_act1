@@ -1,10 +1,11 @@
 .model small
 .stack
 .data
-	Var1 db "You are in a BatStateU to enroll.$"
-	Var2 db "...but you forgot your money...$"
-	Var3 db "...What will you do?$"
-	Var4 db "Game Over$"
+	Var1 db "May itsura ka naman....$"
+	Var2 db "...pero wala ka namang pera...$"
+	Var3 db "...Ano gagawin MO?$"
+	Var4 db "WALA$"
+	Var5 db "iyak ka bHie$"
 .code
 start:
 	mov ax, @data
@@ -51,18 +52,31 @@ start:
 	mov ah, 09
 	mov dx, offset Var3
 	int 21h
- 
-	mov ah, 01
+
+ 	mov ah, 01
 	int 21h
- 
+
 	mov ah, 02
 	mov bh, 0
-	mov dh, 10 ; y position
+	mov dh, 8 ; y position
 	mov dl, 24 ; x position
 	int 10h
- 
+  
 	mov ah, 09
 	mov dx, offset Var4
+	int 21h
+
+ 	mov ah, 01
+	int 21h
+
+	mov ah, 02
+	mov bh, 0
+	mov dh, 9 ; y position
+	mov dl, 24 ; x position
+	int 10h
+  
+	mov ah, 09
+	mov dx, offset Var5
 	int 21h
 
 	mov ah, 01

@@ -6,6 +6,7 @@
 	Var3 db "...Ano gagawin MO?$"
 	Var4 db "WALA$"
 	Var5 db "iyak ka bHie$"
+	Var6 db "...umuwi  ka na bay-bHie...$"
 .code
 start:
 	mov ax, @data
@@ -82,6 +83,43 @@ start:
 	mov ah, 01
 	int 21h
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		mov ah, 02					; request to set the cursor position
+		mov bh, 0					
+		mov dh, 11 					; y position
+		mov dl, 31 					; x position
+		int 10h
+
+
+		mov ah, 02
+		mov dl, 219
+		int 21h
+
+		mov cx,16
+		mov ah,02
+		mov dl,219
+		lp0:
+		int 21h
+		loop lp0
+
+		mov ah, 02					; request to set the cursor position
+		mov bh, 0					
+		mov dh, 10 					; y position
+		mov dl, 34 					; x position
+		int 10h
+
+
+		mov ah, 02
+		mov dl, 219
+		int 21h
+
+		mov cx,10
+		mov ah,02
+		mov dl,219
+		lp00:
+		int 21h
+		loop lp00
+
+
 		mov ah, 02					; request to set the cursor position
 		mov bh, 0					
 		mov dh, 12 					; y position
@@ -207,6 +245,19 @@ start:
 		lp7:
 		int 21h
 		loop lp7
+
+	mov ah, 01
+	int 21h
+
+	mov ah, 02
+	mov bh, 0
+	mov dh, 18 ; y position
+	mov dl, 26 ; x position
+	int 10h
+
+	mov ah, 09
+	mov dx, offset Var6
+	int 21h
 
 	mov ah, 4ch
 	int 21h

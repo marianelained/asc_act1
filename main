@@ -4,6 +4,10 @@
 	Msg1 db "BatStateU$"
 .code
 	start:
+		mov ax,@data
+		mov ds,ax
+
+	
 		mov ah, 06h			;function 06h int 10 for screen processing
 		mov bh, 90H			;to change screen attributes, 9H(LightBlue) for Background and 0H(Black) for Text 
 		mov cx, 0			;to define screen resolution, ch-00h (row). cl-00h(column)
